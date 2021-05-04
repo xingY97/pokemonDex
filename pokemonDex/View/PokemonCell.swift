@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PokemonCell: UITableViewCell {
 
-    @IBOutlet weak var pokemonImageView: UIView!
+    @IBOutlet weak var pokemonImageView: UIImageView!
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     
@@ -17,6 +18,9 @@ class PokemonCell: UITableViewCell {
         didSet {
             nameLabel.text = pokemon?.name
             idLabel.text = "\(pokemon?.id ?? 0)"
+            if let image = pokemon?.sprites?.frontDefault, let url = URL(string: image) {
+                pokemonImageView.kf.setImage(with: url)
+            }
         }
     }
     
@@ -32,3 +36,4 @@ class PokemonCell: UITableViewCell {
     }
 
 }
+

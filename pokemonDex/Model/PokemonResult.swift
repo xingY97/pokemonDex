@@ -22,13 +22,13 @@ struct Pokemon: Decodable {
 struct PokemonData: Decodable {
     let id: Int
     let name: String
-    //let sprites: Sprites?
+    let sprites: Sprites?
 }
 
 struct Sprites: Decodable {
-    let fromDefault: String
+    let frontDefault: String
     
-    enum codingKeys: String, CodingKey{
+    enum CodingKeys: String, CodingKey{
         case frontDefault = "front_default"
     }
 }

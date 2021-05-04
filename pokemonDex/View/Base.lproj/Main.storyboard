@@ -66,7 +66,7 @@
                                         <connections>
                                             <outlet property="idLabel" destination="VMO-Cu-ZAy" id="Ppy-zq-GkI"/>
                                             <outlet property="nameLabel" destination="JHH-CW-4PX" id="cUJ-B4-KTR"/>
-                                            <outlet property="pokemonImageView" destination="fVt-3H-OPi" id="Qhe-sS-qpX"/>
+                                            <outlet property="pokemonImageView" destination="M3Z-SQ-5cS" id="baq-Ob-dDF"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

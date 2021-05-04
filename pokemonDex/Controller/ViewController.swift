@@ -25,6 +25,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return pokemonList.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row + 1 == pokemonList.count {
+            fetchPokemonList(withPage: nextPege)
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PokemonCell") as! PokemonCell
         let pokemon = pokemonList[indexPath.row]
